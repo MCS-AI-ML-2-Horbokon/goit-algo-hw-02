@@ -31,7 +31,7 @@ def process_request():
     else:
         print("Queue is empty")
 
-def main():
+def loop():
     try:
         while True:
             generate_request()
@@ -39,6 +39,16 @@ def main():
             sleep(1)
     except KeyboardInterrupt:
         process_request() # empty
+
+def main():
+    generate_request()
+    generate_request()
+    process_request()
+    process_request()
+    process_request() # Queue is empty
+    generate_request()
+    process_request()
+    process_request() # Queue is empty
 
 
 if __name__ == "__main__":
